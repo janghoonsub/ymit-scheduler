@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, SwipeTestActivity!</string>
+    <string name="app_name">SwipeTest</string>
+    <string name="timetable">시 간 표</string>
+    <string name="notify1">공유 된 구글 캘린더의 일정을 가져 올 수 있습니다.</string>
+	<string name="notify2">공유 된 다른 캘린더의 ID를 입력하세요.</string>
+    <string name="notify3">캘린더 ID는 캘린더 설정\(세부정보\)에서 볼 수 있습니다.</string>
+    <string name="notify4">\n현재 등록되어 있는 ID</string>
+    
+</resources>

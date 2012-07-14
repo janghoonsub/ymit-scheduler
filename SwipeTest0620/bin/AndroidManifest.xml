@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="wb.ml"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="15" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:icon="@drawable/main_img"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.Light" >
+        <activity 
+            android:name=".Main"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".schedule.SwipeTestActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity 
+            android:name=".schedule.AddSchedule"
+            android:label="@string/app_name" />
+        <activity 
+            android:name=".timetable.TimeTableActivity"
+            android:label="@string/timetable" />
+        <activity 
+            android:name=".timetable.TimeTableAdd"
+            android:label="@string/timetable"
+            />
+        <activity
+            android:name=".onesecondmemo.MemoActivity"
+            android:label="@string/app_name" />
+        <activity 
+            android:name=".googlelogin.GoogleLoginActivity"
+            android:label="@string/app_name" />
+        <activity 
+            android:name=".googlelogin.GetOtherCalendar"
+            android:label="@string/app_name" />
+        <service 
+            android:name=".Trigger"
+            android:enabled="true" />
+        
+    </application>
+
+</manifest>

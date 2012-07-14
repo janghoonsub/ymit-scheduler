@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item 
+	    android:id="@+id/setcalendar"
+	    android:icon="@drawable/content_event"
+	    android:showAsAction="always" />
+	<item 
+	    android:id="@+id/loginkey"
+	    android:icon="@drawable/navigation_cancel"
+	    android:showAsAction="always" />
+</menu>
