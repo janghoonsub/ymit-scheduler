@@ -73,19 +73,19 @@ public class MemoActivity extends Activity {
 			.show();
 			break;
 		case R.id.onesecondmemodelete :
-			ArrayList<String> temp = new ArrayList<String>();
-			SparseBooleanArray sb = listview.getCheckedItemPositions();
-			if (sb.size() != 0) {
-				for (int i = listview.getCount() - 1; i >= 0 ; i--) {
-					if (sb.get(i)) {
-						temp.add(memo.get(i));
-					}
-				}
-				odao.delete(temp);
-				listview.clearChoices();
-				refresh();
-				break;
-			}
+//			ArrayList<String> temp = new ArrayList<String>();
+//			SparseBooleanArray sb = listview.getCheckedItemPositions();
+//			if (sb.size() != 0) {
+//				for (int i = listview.getCount() - 1; i >= 0 ; i--) {
+//					if (sb.get(i)) {
+//						temp.add(memo.get(i));
+//					}
+//				}
+//				odao.delete(temp);
+//				listview.clearChoices();
+//				refresh();
+//				break;
+//			}
 		}
 	}
 
