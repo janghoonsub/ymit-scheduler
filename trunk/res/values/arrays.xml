@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="timetablecolors">
+        <item>파란색</item>
+        <item>청록색</item>
+        <item>농회색</item>
+        <item>회색</item>
+        <item>초록색</item>
+        <item>옅은 쥐색</item>
+        <item>심홍색</item>
+        <item>붉은색</item>
+        <item>노란색</item>
+    </string-array>
+</resources>
