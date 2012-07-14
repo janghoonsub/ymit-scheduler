@@ -3,14 +3,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    <TextView 
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="2012 - 7 - 2"
-       android:textSize="12pt"
-       android:gravity="center"
-       android:id="@+id/firsttitle"
-        />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+    
+
+	    <TextView 
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content"
+	       android:text="2012 - 7 - 2"
+	       android:textSize="12pt"
+	       android:layout_marginLeft="50dp"
+	       android:layout_marginRight="50dp"
+	       android:id="@+id/firsttitle"
+	        />
+	    <Button
+	        android:id="@+id/dailydeleteallbutton" 
+	        android:textSize="5pt"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="삭제"
+	        android:onClick="mOnClick"/>
+	    
+    
+    </LinearLayout>
     
     <LinearLayout 
         android:layout_width="match_parent"
@@ -22,7 +41,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="시간"
-            android:layout_weight="3"
+            android:layout_weight="2"
             android:gravity="center"
             android:textSize="10pt"
             android:background="@drawable/xml_border"
