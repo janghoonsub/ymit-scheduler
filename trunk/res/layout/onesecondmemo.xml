@@ -1,63 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-    <LinearLayout 
-        android:orientation="horizontal"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_width="fill_parent">
+    
         <Button 
             android:id="@+id/onesecondmemodeleteall"
             android:text="초기화"
-            android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:layout_width="140dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:onClick="mOnClick"
             />
         <Button 
             android:id="@+id/onesecondmemodelete"
             android:text="선택항목 삭제"
-            android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:layout_width="175dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
             android:onClick="mOnClick"
             />
         
-    </LinearLayout>
+ 	<Button
+           android:text="추가" 
+           android:id="@+id/onesecondaddbutton"
+           android:layout_height="wrap_content"
+           android:layout_width="wrap_content"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentRight="true"
+           android:onClick="mOnClick"
+           />
     
     
+        
+        
     <ListView
    		android:id="@+id/onesecondmemolist"
    		android:layout_width="fill_parent"
-   		android:layout_height="0dp"
-   		android:layout_weight="8" 
+   		android:layout_height="300dp"
+   		android:layout_above="@id/onesecondaddbutton"
+   		android:layout_below="@id/onesecondmemodelete"
    		/>
     
-   <LinearLayout 
-       android:layout_width="fill_parent"
-       android:layout_height="0dp"
-       android:layout_weight="1"
-       android:orientation="horizontal">
         
        <EditText 
         	android:id="@+id/onesecondmemoedittext"
-        	android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_weight="8"
+        	android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/onesecondaddbutton"
+            android:layout_alignParentBottom="true"
           />
-       <Button
-           android:text="추가" 
-           android:id="@+id/onesecondaddbutton"
-           android:layout_height="match_parent"
-           android:layout_width="0dp"
-           android:layout_weight="2"
-           android:onClick="mOnClick"
-           />
-   </LinearLayout>
-    
+
     
 
-</LinearLayout>
+</RelativeLayout>
