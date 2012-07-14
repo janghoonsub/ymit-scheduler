@@ -5,6 +5,7 @@ import wb.ml.domain.AccessTokenDAO;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.webkit.WebView;
 
 public class GoogleLoginActivity extends Activity {
@@ -17,6 +18,8 @@ public class GoogleLoginActivity extends Activity {
 		WebView webView = (WebView) findViewById(R.id.login);
 		webView.setWebViewClient(new GoogleWebViewClient(this));
 		AccessTokenDAO accessTokenDAO = new AccessTokenDAO(this);
+		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		// DB에 이미 토큰이 있다면  --> 차후에 토큰이 유효한가에 대한 확인 필요. refresh와 연관됨
 		if(accessTokenDAO.exist()){
 			Log.d("accessTokenDAO.exist()", "true");
@@ -25,5 +28,13 @@ public class GoogleLoginActivity extends Activity {
 			Log.d("accessTokenDAO.exist()", "false");
 			webView.loadUrl(GoogleCalendarAdapter.getInstance().getAuthorizationUrl());
 		}	
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch(item.getItemId()){
+		case android.R.id.home : finish(); break;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 }
