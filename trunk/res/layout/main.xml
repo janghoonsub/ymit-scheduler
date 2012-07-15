@@ -3,14 +3,26 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
-    <Button 
+    
+    <LinearLayout 
         android:layout_marginTop="50dp"
-        android:layout_gravity="center"
-        android:layout_width="100dp"
-        android:layout_height="70dp"
-        android:onClick="mOnClick"
-        android:id="@+id/swipeTestActivity"
-        android:text="일정" />
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" >
+        <Button 
+            android:layout_width="100dp"
+	        android:layout_height="70dp"
+	        android:onClick="mOnClick"
+	        android:id="@+id/swipeTestActivity"
+	        android:text="일정" />
+        <Button 
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:text="학사력" />
+    </LinearLayout>
+    
+    
     <LinearLayout 
         android:gravity="center"
         android:orientation="horizontal"
