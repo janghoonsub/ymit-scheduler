@@ -4,11 +4,13 @@ import java.util.ArrayList;
 
 import wb.ml.R;
 import wb.ml.domain.OneSecondMemoDAO;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -35,8 +37,19 @@ public class MemoActivity extends Activity {
 		listview = (ListView) findViewById(R.id.onesecondmemolist);
 		edittext = (EditText) findViewById(R.id.onesecondmemoedittext);
 		odao = new OneSecondMemoDAO(this);
+		ActionBar actionbar = getActionBar();
+		actionbar.setTitle("1초메모");
+		actionbar.setDisplayHomeAsUpEnabled(true);
 		refresh();
 
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {	//메뉴 이벤트 처리 메소드
+		switch(item.getItemId()) {
+		case android.R.id.home : finish(); break;	//아이콘 뒤로가기 버튼 이벤트 처리
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 	void refresh() {
