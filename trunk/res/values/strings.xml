@@ -2,7 +2,7 @@
 <resources>
 
     <string name="hello">Hello World, SwipeTestActivity!</string>
-    <string name="app_name">SwipeTest</string>
+    <string name="app_name">YMIT 플래너</string>
     <string name="timetable">시 간 표</string>
     <string name="notify1">공유 된 구글 캘린더의 일정을 가져 올 수 있습니다.</string>
 	<string name="notify2">공유 된 다른 캘린더의 ID를 입력하세요.</string>
