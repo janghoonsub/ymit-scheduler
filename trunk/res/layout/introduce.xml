@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <ImageView 
+        android:id="@+id/hyunjiimage"
+        android:src="@drawable/main_img"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"/>
+    
+    <TextView
+        android:id="@+id/hyunjiname" 
+        android:text="정 현 지"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/hyunjiimage"
+        android:layout_alignLeft="@id/hyunjiimage"
+        />
+    
+    <TextView
+        android:id="@+id/hyunjicontent" 
+        android:text="안녕하세요 정현지입니다"
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/hyunjiimage"
+        android:layout_alignTop="@id/hyunjiimage"
+        />
+    
+    <ImageView 
+		android:id="@+id/jonghoimage"
+        android:src="@drawable/main_img"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:layout_below="@id/hyunjiname"
+        android:layout_alignLeft="@id/hyunjiimage"
+        />
+    
+    <TextView
+        android:id="@+id/jonghoname" 
+        android:text="한 종 호"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/jonghoimage"
+        android:layout_alignLeft="@id/jonghoimage"/>
+    
+    <TextView
+        android:id="@+id/jonghocontent" 
+        android:text="안녕하세요 한종호입니다"
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/jonghoimage"
+        android:layout_alignTop="@id/jonghoimage"
+        />
+
+</RelativeLayout>

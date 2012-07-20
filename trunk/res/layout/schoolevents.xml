@@ -8,5 +8,37 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
        
+        <ImageView 
+            android:src="@drawable/m0102"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+        
+        <ImageView 
+            android:src="@drawable/m0304"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+        <ImageView 
+            android:src="@drawable/m0506"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+        <ImageView 
+            android:src="@drawable/m0708"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+        <ImageView 
+            android:src="@drawable/m0910"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+        <ImageView 
+            android:src="@drawable/m1112"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+        
     </ViewFlipper>
 </LinearLayout>

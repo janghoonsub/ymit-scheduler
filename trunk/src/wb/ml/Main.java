@@ -7,9 +7,11 @@ import wb.ml.domain.AccessTokenDAO;
 import wb.ml.domain.ExamPlannerDateDAO;
 import wb.ml.googlelogin.GetOtherCalendar;
 import wb.ml.googlelogin.GoogleLoginActivity;
+import wb.ml.introduce.IntroduceActivity;
 import wb.ml.onesecondmemo.MemoActivity;
 import wb.ml.plan.ExamPlanner;
 import wb.ml.schedule.ScheduleActivity;
+import wb.ml.schoolevents.schoolEventsActivity;
 import wb.ml.timetable.TimeTableActivity;
 import android.app.Activity;
 import android.content.Intent;
@@ -104,6 +106,14 @@ public class Main extends Activity {
 			break;
 		case R.id.examplanner : 
 			intent = new Intent(this, ExamPlanner.class);
+			startActivity(intent);
+			break;
+		case R.id.SchoolCalendarButton :
+			intent = new Intent(this, schoolEventsActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.IntroduceButton :
+			intent = new Intent(this, IntroduceActivity.class);
 			startActivity(intent);
 			break;
 		}

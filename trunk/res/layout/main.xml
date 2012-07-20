@@ -16,9 +16,11 @@
 	        android:onClick="mOnClick"
 	        android:id="@+id/swipeTestActivity"
 	        android:text="일정" />
-        <Button 
+        <Button
+            android:id="@+id/SchoolCalendarButton" 
             android:layout_width="100dp"
             android:layout_height="70dp"
+            android:onClick="mOnClick"
             android:text="학사력" />
     </LinearLayout>
     
@@ -60,9 +62,11 @@
             android:layout_height="70dp"
             android:text="시험 계획" />
         <Button 
+            android:id="@+id/IntroduceButton"
             android:layout_width="100dp"
             android:layout_height="70dp"
-            android:text="설정" />
+            android:onClick="mOnClick"
+            android:text="개발자 소개" />
     </LinearLayout>
 	<TextView 
 	    android:id="@+id/maindday"

@@ -1,5 +1,8 @@
 package wb.ml.plan;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 import wb.ml.R;
 import wb.ml.domain.ExamPlannerDateDAO;
 import wb.ml.domain.ExamPlannerVO;
@@ -61,32 +64,24 @@ public class ExamPlanAdapter extends BaseAdapter {
 		
 		if(position>0 && position<5) {
 			ExamPlannerDateDAO epddao = new ExamPlannerDateDAO(context);
+			Calendar calendar = new GregorianCalendar();
 			if(epddao.select() != null) {
 				String[] cal = epddao.select().split("-");
 				String month, date;
-				if(Integer.parseInt(cal[1])<10) {
-					month = "0"+(Integer.parseInt(cal[1])+1);
-				} else {
-					month = (Integer.parseInt(cal[1])+1)+"";
-				}
-				int d = Integer.parseInt(cal[2]);
+				calendar.set(Integer.parseInt(cal[0]), Integer.parseInt(cal[1]), Integer.parseInt(cal[2]));
 				switch(position) {
-				case 2 : 
-					d = d+1;
+				case 1 : viewHolde.textView.setText((calendar.get(Calendar.MONTH)+1)+"/"+calendar.get(Calendar.DATE));
 					break;
-				case 3 : 
-					d = d+2;
+				case 2 : calendar.add(Calendar.DATE, 1);
+					viewHolde.textView.setText((calendar.get(Calendar.MONTH)+1)+"/"+calendar.get(Calendar.DATE));
 					break;
-				case 4 : 
-					d = d+3;
+				case 3 : calendar.add(Calendar.DATE, 2);
+					viewHolde.textView.setText((calendar.get(Calendar.MONTH)+1)+"/"+calendar.get(Calendar.DATE));
+					break;
+				case 4 : calendar.add(Calendar.DATE, 3);
+					viewHolde.textView.setText((calendar.get(Calendar.MONTH)+1)+"/"+calendar.get(Calendar.DATE));
 					break;
 				}
-				if(d<10) {
-					date = "0"+d;
-				} else {
-					date = d+"";
-				}
-				viewHolde.textView.setText(month+"/"+date);
 				viewHolde.textView.setTextSize(12);
 			}
 		} else if(position == 5) {
