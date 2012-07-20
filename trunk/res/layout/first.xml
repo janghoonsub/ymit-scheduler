@@ -9,8 +9,6 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal" >
-    
-
 	    <TextView 
 	       android:layout_width="wrap_content"
 	       android:layout_height="wrap_content"
@@ -18,8 +16,7 @@
 	       android:textSize="12pt"
 	       android:layout_marginLeft="50dp"
 	       android:layout_marginRight="50dp"
-	       android:id="@+id/firsttitle"
-	        />
+	       android:id="@+id/firsttitle" />
 	    <Button
 	        android:id="@+id/dailydeleteallbutton" 
 	        android:textSize="5pt"
@@ -27,8 +24,6 @@
 	        android:layout_height="wrap_content"
 	        android:text="삭제"
 	        android:onClick="mOnClick"/>
-	    
-    
     </LinearLayout>
     
     <LinearLayout 

@@ -113,6 +113,12 @@ public class DailyScheduleDAO extends SQLiteOpenHelper {
 		db.close();
 	}
 	
+	public void deleteAll(String time){
+		db = this.getWritableDatabase();
+		db.execSQL("DELETE FROM dailylist WHERE date like \""+time+"%\"");
+		db.close();
+	}
+	
 	public int getId(String time, String schedule) {
 		db = this.getReadableDatabase();
 		Cursor cursor;

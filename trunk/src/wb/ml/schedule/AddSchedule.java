@@ -58,7 +58,7 @@ public class AddSchedule extends Activity {
 			flag = true;
 		} else {
 			Calendar cal = new GregorianCalendar();
-			temp = SwipeTestActivity.today;
+			temp = ScheduleActivity.today;
 			String[] date = temp.split("-");
 			mYear = Integer.parseInt(date[0]);		//today 에 있던 날짜 가져오기
 			mMonth = Integer.parseInt(date[1])-1;
@@ -95,7 +95,7 @@ public class AddSchedule extends Activity {
 					finish();
 				} else {
 					ddao.insert(dvo);
-					SwipeTestActivity.mTabAdapter.notifyDataSetChanged();
+					ScheduleActivity.mTabAdapter.notifyDataSetChanged();
 					finish();
 				}
 			}

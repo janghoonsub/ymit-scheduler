@@ -101,7 +101,7 @@ public class TabAdapter extends PagerAdapter implements TabListener,
 	public void onPageScrolled(int arg0, float arg1, int arg2) {}
 	public void onPageSelected(int position) {		//페이지를 넘기면 탭도 같이 움직이게 하는 메소드
 		mActionBar.setSelectedNavigationItem(position);
-		SwipeTestActivity.position=position;
+		ScheduleActivity.position=position;
 	}
 
 	// TabListener 의 메소드들
@@ -110,16 +110,16 @@ public class TabAdapter extends PagerAdapter implements TabListener,
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {		//탭 클릭시 화면을 넘기는 메소드
 		if("DAILY".equals(tab.getText())) {
 			mViewPager.setCurrentItem(0);
-			SwipeTestActivity.position=0;
+			ScheduleActivity.position=0;
 
 		} else if("WEEKLY".equals(tab.getText())) {
 			mViewPager.setCurrentItem(1);
-			SwipeTestActivity.position=1;
+			ScheduleActivity.position=1;
 
 		} else if("MONTHLY".equals(tab.getText())) {
 			mViewPager.setCurrentItem(2);
-			SwipeTestActivity.position=2;
-			SwipeTestActivity.refresh();
+			ScheduleActivity.position=2;
+			ScheduleActivity.refresh();
 		}
 
 	}
@@ -146,7 +146,7 @@ public class TabAdapter extends PagerAdapter implements TabListener,
 			dailyarray = new ArrayList<Arrays>();
 	        Arrays day;	//dailyarray 에 집어넣기 위한 틀
 	        DailyScheduleDAO ddao = new DailyScheduleDAO(main);		//db 쓰기위해 호출
-	        ArrayList<DailyScheduleVO> show = ddao.select(SwipeTestActivity.today);		//today의 지정된 날짜의 시간,스케줄을 가지고 온다
+	        ArrayList<DailyScheduleVO> show = ddao.select(ScheduleActivity.today);		//today의 지정된 날짜의 시간,스케줄을 가지고 온다
 	        for(int i=0; i < show.size(); i++) {
 	        	day= new Arrays(show.get(i).getDate(), show.get(i).getSchedule());
 	        	dailyarray.add(day);		//day를 통해 dailyarray에 넣어준다
@@ -156,11 +156,11 @@ public class TabAdapter extends PagerAdapter implements TabListener,
 	        mylist.setOnItemLongClickListener(mOnItemLongClickListener);	// listview 에 longclicklistener 지정
 	        mylist.setAdapter(adapter);		//준비된 어댑터를 연결
 	        DailyMemoDAO dmdao = new DailyMemoDAO(main);		//db준비
-	        String temp = dmdao.select(SwipeTestActivity.today);	//오늘 메모 갖고옴
+	        String temp = dmdao.select(ScheduleActivity.today);	//오늘 메모 갖고옴
 	        final TextView txt = (TextView) v.findViewById(R.id.firstmemo);		//메모 띄울 textview
 	        txt.setText(temp);	//지정
 	        firstTitle =(TextView)v.findViewById(R.id.firsttitle);
-	        setFirstTitle(SwipeTestActivity.today);
+	        setFirstTitle(ScheduleActivity.today);
 			break;
 		case 1:
 			v = layoutInflater.inflate(R.layout.second, null);
@@ -219,7 +219,7 @@ public class TabAdapter extends PagerAdapter implements TabListener,
 			case R.id.update :
 				String[] tt = new String[2];
 				Intent intent = new Intent(main, AddSchedule.class);
-				tt[0] = SwipeTestActivity.today+" "+array.mTime;
+				tt[0] = ScheduleActivity.today+" "+array.mTime;
 				tt[1] = array.mSchedule;
 				editdialog.dismiss();
 				intent.putExtra("data",tt);
@@ -228,9 +228,9 @@ public class TabAdapter extends PagerAdapter implements TabListener,
 			case R.id.delete :
 				try {
 					DailyScheduleDAO ddao = new DailyScheduleDAO(main);		//db준비
-					ddao.delete(SwipeTestActivity.today+" "+array.mTime, array.mSchedule);		//데이터 삭제
+					ddao.delete(ScheduleActivity.today+" "+array.mTime, array.mSchedule);		//데이터 삭제
 					editdialog.dismiss();		//dialog를 닫는다
-					SwipeTestActivity.refresh();		//원래화면 새로고침
+					ScheduleActivity.refresh();		//원래화면 새로고침
 					Toast.makeText(main, "삭제되었습니다", Toast.LENGTH_SHORT).show();
 				} catch (Exception e) {
 					Toast.makeText(main, "에러가 발생하였습니다", Toast.LENGTH_SHORT).show();
@@ -243,7 +243,7 @@ public class TabAdapter extends PagerAdapter implements TabListener,
 	public void changeTitle(int num, boolean arrow) {		//arrow : 누른 화살표 방향
 		switch(num) {
 		case 0 : 
-			firstTitle.setText(SwipeTestActivity.today);
+			firstTitle.setText(ScheduleActivity.today);
 			break;
 		case 1 :
 			if(arrow) {
@@ -423,11 +423,11 @@ public class TabAdapter extends PagerAdapter implements TabListener,
 	}
 	
 	private void goToFirst(String day1) {
-		SwipeTestActivity.today = day1;
-		SwipeTestActivity.position=0;
-		refresh(SwipeTestActivity.position);
-		setFirstTitle(SwipeTestActivity.today);
-		SwipeTestActivity.refresh();
+		ScheduleActivity.today = day1;
+		ScheduleActivity.position=0;
+		refresh(ScheduleActivity.position);
+		setFirstTitle(ScheduleActivity.today);
+		ScheduleActivity.refresh();
 	}
 	
 	/**
