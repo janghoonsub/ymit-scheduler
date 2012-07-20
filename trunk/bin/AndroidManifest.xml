@@ -45,6 +45,9 @@
         <activity 
             android:name=".plan.ExamPlanner"
             android:label="@string/app_name" />
+        <activity
+            android:name=".schoolevents.schoolEventsActivity"
+            android:label="@string/app_name" />
         <service 
             android:name=".Trigger"
             android:enabled="true" />
