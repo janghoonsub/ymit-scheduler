@@ -9,7 +9,7 @@ import wb.ml.googlelogin.GetOtherCalendar;
 import wb.ml.googlelogin.GoogleLoginActivity;
 import wb.ml.onesecondmemo.MemoActivity;
 import wb.ml.plan.ExamPlanner;
-import wb.ml.schedule.SwipeTestActivity;
+import wb.ml.schedule.ScheduleActivity;
 import wb.ml.timetable.TimeTableActivity;
 import android.app.Activity;
 import android.content.Intent;
@@ -28,7 +28,7 @@ public class Main extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		Intent intent = new Intent(this, SwipeTestActivity.class);
+		Intent intent = new Intent(this, ScheduleActivity.class);
 		startActivity(intent);
 	}
 	
@@ -91,7 +91,7 @@ public class Main extends Activity {
 		Intent intent;
 		switch(v.getId()) {
 		case R.id.swipeTestActivity :
-			intent = new Intent(this, SwipeTestActivity.class);
+			intent = new Intent(this, ScheduleActivity.class);
 			startActivity(intent);
 			break;
 		case R.id.timetable : 
