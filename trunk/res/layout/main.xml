@@ -54,6 +54,8 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent" >
         <Button 
+            android:id="@+id/examplanner"
+            android:onClick="mOnClick"
             android:layout_width="100dp"
             android:layout_height="70dp"
             android:text="시험 계획" />
@@ -63,9 +65,10 @@
             android:text="설정" />
     </LinearLayout>
 	<TextView 
+	    android:id="@+id/maindday"
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent"
-	    android:text="D - 00 Default"
+	    android:text=""
 	    android:textSize="40dp"
 	    android:gravity="center"
 	    />
