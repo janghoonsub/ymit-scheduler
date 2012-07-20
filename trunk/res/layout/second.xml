@@ -13,8 +13,7 @@
     <TextView 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="메모 / 오늘 목표"
-        
+        android:text="주간 메모/목표"
         android:background="@drawable/xml_border"
         />
     
@@ -24,14 +23,4 @@
         android:id="@+id/weekmemo"
         android:layout_weight="2"
         />
-    
-    <Button 
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="+		추가"
-            android:id="@+id/dailyadd"
-            android:onClick="mOnClick"
-            />
-
 </LinearLayout>

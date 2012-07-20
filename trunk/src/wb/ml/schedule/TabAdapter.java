@@ -55,7 +55,7 @@ public class TabAdapter extends PagerAdapter implements TabListener,
 	private ArrayList<WeekInfo> mWeekList;
 	private WeekAdapter mWeekAdapter;
 	private ListView weekListView;
-	
+	private TextView weekMemo;
 	
 	Calendar mLastMonthCalendar;
 	Calendar mThisMonthCalendar;
@@ -167,6 +167,8 @@ public class TabAdapter extends PagerAdapter implements TabListener,
 			weekListView = (ListView) v.findViewById(R.id.secondlistview);
 			mWeekList = new ArrayList<WeekInfo>();
 			mThisWeekCalendar = Calendar.getInstance();
+			//주간 메모
+			weekMemo = (TextView) v.findViewById(R.id.weekmemo);
 			getWeek(mThisWeekCalendar);
 			break;
 		case 2:
@@ -377,6 +379,13 @@ public class TabAdapter extends PagerAdapter implements TabListener,
 	}
 	
 	private void initWeekAdapter() {
+		DailyMemoDAO dm2dao = new DailyMemoDAO(main);
+		String wm = "";
+		for(int i=0 ; i<mWeekList.size();i++) {
+			if(dm2dao.select(mWeekList.get(i).getWeekAndDate())!=null)
+				wm += dm2dao.select(mWeekList.get(i).getWeekAndDate())+"\n";
+		}
+		weekMemo.setText(wm);
 		mWeekAdapter = new WeekAdapter(main, wb.ml.R.layout.weekcustomlist, mWeekList);
 		weekListView.setAdapter(mWeekAdapter);
 		weekListView.setOnItemClickListener(new OnItemClickListener() {
