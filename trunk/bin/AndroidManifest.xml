@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".schedule.SwipeTestActivity"
+            android:name=".schedule.ScheduleActivity"
             android:label="@string/app_name" >
         </activity>
         <activity 
@@ -41,6 +41,9 @@
             android:label="@string/app_name" />
         <activity 
             android:name=".googlelogin.GetOtherCalendar"
+            android:label="@string/app_name" />
+        <activity 
+            android:name=".plan.ExamPlanner"
             android:label="@string/app_name" />
         <service 
             android:name=".Trigger"

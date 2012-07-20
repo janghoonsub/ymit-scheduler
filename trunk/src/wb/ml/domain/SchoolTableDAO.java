@@ -63,10 +63,31 @@ public class SchoolTableDAO extends SQLiteOpenHelper {
 		return result;
 	}
 	
+	public void delelteOne(int position) {
+		db = this.getWritableDatabase();
+		db.execSQL("DELETE FROM schooltable WHERE position=\""+position+"\"");
+		db.close();
+	}
+	
 	public void delete() {
 		db = this.getWritableDatabase();
 		db.delete("schooltable", null, null);
 		db.close();
 		this.close();
+	}
+	
+	public boolean exist(int position) {
+		db = this.getWritableDatabase();
+		boolean result = false;
+		Cursor cursor;
+		cursor = db.rawQuery("SELECT * FROM schooltable WHERE position=\""+position+"\"", null);
+		if(cursor.getCount() == 0) {
+			result = false;
+		} else {
+			result = true;
+		}
+		cursor.close();
+		db.close();
+		return result;
 	}
 }

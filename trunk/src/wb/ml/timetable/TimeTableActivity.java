@@ -17,13 +17,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class TimeTableActivity extends Activity implements OnItemClickListener {
+public class TimeTableActivity extends Activity implements OnItemClickListener, OnItemLongClickListener {
 	GridView mGridView;
 	TimeTableAdapter adapter;
 	ListView list;
@@ -55,7 +56,7 @@ public class TimeTableActivity extends Activity implements OnItemClickListener {
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void onItemClick(AdapterView<?> parent, View v, int position, long arg3) {		//그리드뷰로 만든 시간표 이벤트 처리 메소드
+	public void onItemClick(AdapterView<?> parent, View v, int position, long id) {		//그리드뷰로 만든 시간표 이벤트 처리 메소드
 		ttDAO = new TimeTableDAO(this);
 		items = ttDAO.select();
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_single_choice, items);
@@ -110,6 +111,46 @@ public class TimeTableActivity extends Activity implements OnItemClickListener {
 		}
 	}
 	
+	public boolean onItemLongClick(AdapterView<?> parent, View v, int position, long id) {
+		if(!(position < 7 || position%7==0)){
+			final SchoolTableDAO stdao = new SchoolTableDAO(TimeTableActivity.this);
+			if(stdao.exist(position)) {
+				String week="", period="";
+				switch(position%7) {				//클릭한 번호를 이용해서 월요일, 몇교시인지 구함
+				case 1 : week="월요일"; break;
+				case 2 : week="화요일"; break;
+				case 3 : week="수요일"; break;
+				case 4 : week="목요일"; break;
+				case 5 : week="금요일"; break;
+				case 6 : week="토요일"; break;
+				}
+				switch(position/7) {
+				case 1 : period="1교시"; break;
+				case 2 : period="2교시"; break;
+				case 3 : period="3교시"; break;
+				case 4 : period="4교시"; break;
+				case 5 : period="5교시"; break;
+				case 6 : period="6교시"; break;
+				case 7 : period="7교시"; break;
+				}
+				final int p = position;
+				new AlertDialog.Builder(this)
+				.setTitle(week+" "+period+"를 삭제합니까?")
+				.setNegativeButton("확인", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						stdao.delelteOne(p);
+						Toast.makeText(TimeTableActivity.this, "삭제되었습니다.", Toast.LENGTH_SHORT).show();
+						refresh();
+					}
+				})
+				.setPositiveButton("취소", null)
+				.show();
+			}
+		}
+		
+		return true;
+	}
+	
 	public void mOnClick(View v) {	// 메뉴버튼들 이벤트 처리 메소드
 		switch(v.getId()) {
 		case R.id.tablesettingbutton : //과목 추가하는 액티비티로 넘어가는 버튼
@@ -137,5 +178,7 @@ public class TimeTableActivity extends Activity implements OnItemClickListener {
 		adapter = new TimeTableAdapter(this, R.layout.time);
 		mGridView.setAdapter(adapter);
 		mGridView.setOnItemClickListener(this);
+		mGridView.setOnItemLongClickListener(this);
 	}
+
 }
