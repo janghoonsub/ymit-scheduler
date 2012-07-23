@@ -14,7 +14,7 @@ public class IntroduceActivity extends Activity {
 		setContentView(R.layout.introduce);
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
-		
+		getActionBar().setTitle("개발자 소개");
 		
 	}
 

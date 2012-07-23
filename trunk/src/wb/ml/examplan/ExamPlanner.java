@@ -64,6 +64,7 @@ public class ExamPlanner extends Activity implements OnItemClickListener, OnItem
 		goalshow = (TextView) findViewById(R.id.editgoalshow);
 		
 		frame.setVisibility(View.INVISIBLE);
+		getActionBar().setTitle("시험계획");
 		refresh();
 	}
 	

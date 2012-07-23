@@ -39,6 +39,7 @@ public class NoticeListDAO extends SQLiteOpenHelper {
 		db.close();
 	}
 	
+	
 	public List<Map<String, String>> select() {
 		db = this.getWritableDatabase();
 		Cursor cursor;
@@ -56,9 +57,16 @@ public class NoticeListDAO extends SQLiteOpenHelper {
 		return dataList;
 	}
 	
+	public void delete(String schedule, String time) {
+		db = this.getWritableDatabase();
+		db.execSQL("DELETE FROM noticelist WHERE desc=\""+schedule+"\" AND date=\""+time+"\"");
+		db.close();
+	}
+	
 	public void clear() {
 		db = this.getWritableDatabase();
 		db.execSQL("DROP TABLE IF EXISTS noticelist");
 		db.close();
 	}
+	
 }
