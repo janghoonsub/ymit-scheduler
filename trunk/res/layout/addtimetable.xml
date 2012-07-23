@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <TableLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" >
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" >
+            <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_width="wrap_content"
+	            android:text="과    목 :" />
+	        <EditText
+	            android:id="@+id/tablesubject" 
+	            android:layout_height="wrap_content"
+	            android:layout_width="150dp" />
+        </TableRow>
+        <TableRow 
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" >
+            <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_width="wrap_content"
+	            android:text="선생님 :"  />
+	        <EditText 
+	            android:id="@+id/tableteacher"
+	            android:layout_height="wrap_content"
+	            android:layout_width="150dp" />
+        </TableRow>
+    </TableLayout>
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="색상을 고르세요." />
+    <Spinner
+        android:id="@+id/timetablespinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout 
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+		<Button 
+		    android:id="@+id/timetableadd"
+			android:layout_height="wrap_content"
+	        android:layout_width="0dp"
+	        android:layout_weight="1"
+	        android:onClick="mOnClick"
+	        android:text="추가" />
+        <Button 
+            android:id="@+id/timetabledelete"
+			android:layout_height="wrap_content"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:onClick="mOnClick"
+			android:text="삭제" />
+    </LinearLayout>
+    <ListView 
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/tablelist" />
+</LinearLayout>
