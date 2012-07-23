@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <GridView 
+        android:id="@+id/examplannergridview"
+        android:layout_width="wrap_content"
+        android:layout_height="270dp"
+        android:numColumns="5"
+        android:listSelector="@drawable/gridview_selector"
+        android:stretchMode="columnWidth" />
+   <FrameLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
+       
+	<TableLayout 
+	    android:id="@+id/examplanerformshow"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent" >
+	    <TableRow>
+	        <TextView 
+	        android:id="@+id/plannersubjectshow"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="4dp"
+		    android:textSize="20sp"
+		    android:text="과목명" />
+	        <TextView
+			android:id="@+id/editsubjectshow"  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content"
+		    android:textSize="20sp" 
+		    />
+	    </TableRow>
+	    
+	    <TableRow>
+	        <TextView
+	        android:id="@+id/plannercovershow"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="4dp"
+	        android:text="범위"
+	        android:textSize="20sp" />
+	        <TextView
+			android:id="@+id/editcovershow"  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:textSize="20sp"
+		    />
+	    </TableRow>
+	    
+	    <TableRow>
+	        <TextView
+	        android:id="@+id/plannerbeforeshow"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="4dp"
+	        android:text="이전점수"
+	        android:textSize="20sp"
+	        />
+	        <TextView
+			android:id="@+id/editbeforeshow"  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:textSize="20sp"
+		    />
+	    </TableRow>
+	    
+	    <TableRow>
+	        <TextView
+	        android:id="@+id/plannergoalshow"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="4dp"
+	        android:text="목표"
+	        android:textSize="20sp" />
+	        <TextView
+			android:id="@+id/editgoalshow"  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:textSize="20sp"
+		    />
+	    </TableRow>
+		
+	</TableLayout>
+    </FrameLayout>
+</LinearLayout>
