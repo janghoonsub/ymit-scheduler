@@ -56,10 +56,11 @@ public class ScheduleActivity extends Activity {
         mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         mActionBar.setDisplayHomeAsUpEnabled(true);
         //탭 추가
-        mTabAdapter.addTab(mActionBar.newTab().setText("DAILY"));
-        mTabAdapter.addTab(mActionBar.newTab().setText("WEEKLY"));
-        mTabAdapter.addTab(mActionBar.newTab().setText("MONTHLY"));
+        mTabAdapter.addTab(mActionBar.newTab().setText("일간"));
+        mTabAdapter.addTab(mActionBar.newTab().setText("주간"));
+        mTabAdapter.addTab(mActionBar.newTab().setText("월간"));
         position = 0;
+        getActionBar().setTitle("일정");
     }
     
     @Override

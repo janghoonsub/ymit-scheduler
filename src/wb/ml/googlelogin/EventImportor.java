@@ -41,7 +41,7 @@ public class EventImportor extends Thread {
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
-			try { Thread.sleep(10000);} catch (Exception e) { ; }
+			try { Thread.sleep(1000*60*30);} catch (Exception e) { ; }
 		}
 	}
 	

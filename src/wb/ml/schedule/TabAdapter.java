@@ -26,7 +26,6 @@ import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -108,15 +107,15 @@ public class TabAdapter extends PagerAdapter implements TabListener,
 	public void onTabReselected(Tab tab, FragmentTransaction ft) {}
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {}
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {		//탭 클릭시 화면을 넘기는 메소드
-		if("DAILY".equals(tab.getText())) {
+		if("일간".equals(tab.getText())) {
 			mViewPager.setCurrentItem(0);
 			ScheduleActivity.position=0;
 
-		} else if("WEEKLY".equals(tab.getText())) {
+		} else if("주간".equals(tab.getText())) {
 			mViewPager.setCurrentItem(1);
 			ScheduleActivity.position=1;
 
-		} else if("MONTHLY".equals(tab.getText())) {
+		} else if("월간".equals(tab.getText())) {
 			mViewPager.setCurrentItem(2);
 			ScheduleActivity.position=2;
 			ScheduleActivity.refresh();
@@ -383,7 +382,7 @@ public class TabAdapter extends PagerAdapter implements TabListener,
 		String wm = "";
 		for(int i=0 ; i<mWeekList.size();i++) {
 			if(dm2dao.select(mWeekList.get(i).getWeekAndDate())!=null)
-				wm += dm2dao.select(mWeekList.get(i).getWeekAndDate())+"\n";
+				wm += (mWeekList.get(i).getWeekAndDate()).substring(5)+"  "+dm2dao.select(mWeekList.get(i).getWeekAndDate())+"\n";
 		}
 		weekMemo.setText(wm);
 		mWeekAdapter = new WeekAdapter(main, wb.ml.R.layout.weekcustomlist, mWeekList);

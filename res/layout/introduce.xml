@@ -27,7 +27,8 @@
     
     <TextView
         android:id="@+id/hyunjicontent" 
-        android:text="안녕하세요 역삼중 3학년 정현지입니다"
+        android:text="안녕하세요 역삼중 3학년 정현지입니다. 오랜 시간 설레이며 참여했던 프로젝트의 끝이 보이는 것 같아요. 무작정 게임이 좋아서 시작했던 컴퓨팅! 이렇게 작품을 만들게 되어 감회가 새롭습니다. 한 사람에게라도 이 앱이 도움이 되었으면 좋겠습 니다!
+jhg1972080@naver.com"
         android:paddingTop="10dp"
         android:paddingLeft="5dp"
         android:layout_height="wrap_content"
@@ -57,7 +58,10 @@
     
     <TextView
         android:id="@+id/jonghocontent" 
-        android:text="안녕하세요 역삼중 3학년 한종호입니다"
+        android:text="안녕하세요 역삼중 3학년 한종호입니다. 개발하는데 5달이라는 어마어마한 시간을 들였습니다. 이번기회를 통해 어플을 만드는 것은 정말 힘들다는 것을 알게되었네요. 
+여러분 어플 함부로 지우지마세요ㅠㅠ
+lgwl81@gmail.com
+카톡: ppdd"
         android:paddingLeft="5dp"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"

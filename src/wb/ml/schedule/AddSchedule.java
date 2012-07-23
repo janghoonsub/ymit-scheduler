@@ -14,6 +14,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -40,6 +41,9 @@ public class AddSchedule extends Activity {
 		
 		mText = (TextView) findViewById(R.id.date);
 		mTitle = (EditText) findViewById(R.id.addscheduleTitle);
+		
+		getActionBar().setTitle("일정 추가");
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		
 		if(intent.hasExtra("data")) {
 			tt = intent.getStringArrayExtra("data");
@@ -68,6 +72,14 @@ public class AddSchedule extends Activity {
 			flag = false;
 		}
 		updateNow();
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {	//메뉴 이벤트 처리 메소드
+		switch(item.getItemId()) {
+		case android.R.id.home : finish(); break;	//아이콘 뒤로가기 버튼 이벤트 처리
+		}
+		return super.onOptionsItemSelected(item);
 	}
 	
 	public void mOnClick(View v) {

@@ -12,6 +12,7 @@ public class schoolEventsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setTitle("학사력");
 
 		Context c = getApplicationContext();
 		BaseViewPager pager = new BaseViewPager(c);

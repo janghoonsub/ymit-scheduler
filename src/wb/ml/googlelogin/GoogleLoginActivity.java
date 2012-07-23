@@ -20,6 +20,7 @@ public class GoogleLoginActivity extends Activity {
 		AccessTokenDAO accessTokenDAO = new AccessTokenDAO(this);
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setTitle("구글 로그인");
 		// DB에 이미 토큰이 있다면  --> 차후에 토큰이 유효한가에 대한 확인 필요. refresh와 연관됨
 		if(accessTokenDAO.exist()){
 			Log.d("accessTokenDAO.exist()", "true");

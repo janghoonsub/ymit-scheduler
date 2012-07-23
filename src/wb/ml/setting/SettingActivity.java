@@ -38,6 +38,7 @@ public class SettingActivity extends Activity {
 		list.setOnItemClickListener(mItemClickListener);
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setTitle("설정");
 	}
 	
 	AdapterView.OnItemClickListener mItemClickListener = 

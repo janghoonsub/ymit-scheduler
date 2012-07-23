@@ -18,6 +18,7 @@
 		android:id="@+id/editsubject"  
 	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content" 
+	    android:hint="과목명"
 	    />
     </TableRow>
     
@@ -34,6 +35,7 @@
 		android:id="@+id/editcover"  
 	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content" 
+	    android:hint="시험범위"
 	    />
     </TableRow>
     
@@ -51,6 +53,7 @@
 	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content" 
 	    android:inputType="number"
+	    android:hint="이전점수"
 	    />
     </TableRow>
     
@@ -68,6 +71,7 @@
 	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content" 
 	    android:inputType="number"
+	    android:hint="목표점수"
 	    />
     </TableRow>
 	
